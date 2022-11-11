@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script language="javascript">
+function abc() {
+	var p= document.getElementById("a").value;
+	
+if((p.indexOf('@')>0) && (p.indexOf('.')>0))
+alert("Email is valid")
+else
+alert("Email is not valid")
+}
+</script>
+</head>
+
+<body>
+<input type="text" id="a">
+<input type="button" value="submit" onClick="abc()">
+</body>
+</html>

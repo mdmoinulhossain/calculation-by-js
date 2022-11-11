@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="javascript">
+
+	function Fibo(n)
+	{
+
+		var a = 0, b = 1, f = 1,r=0;  //if change a ,then change r
+		if (n==1) return r;
+		else r = a + "," + b; 
+    	for(var i = 3; i <= n; i++) {
+		 f = a + b;
+       	 a = b;
+       	 b = f;
+		 r+=","+f;
+    	}
+		document.write(n+"th Fibonacci number is "+f);
+		return r;
+	}
+	var f = prompt("Enter a number",0);
+	var result=Fibo(f);
+	alert(result);
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

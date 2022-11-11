@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script type="text/javascript">
+		function facto(){
+		
+		y=  document.getElementById("number").value;
+		var x= 1;
+		for(var i=y;i>0;i--){
+			x= x*i;
+		}
+		document.write(x);
+	}
+	</script>
+<form>
+	<input type="number" name="number" id="number"/>
+	<input type="submit" value="submit" onclick="facto()"/>
+</form>
+
+
+
+</body>
+</html>

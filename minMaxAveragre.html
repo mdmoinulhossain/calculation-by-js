@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+	
+	function findMin(x,y,z){		
+		var x= parseInt(document.getElementById('num1').value); 
+	var y= parseInt(document.getElementById('num2').value);
+	var z= parseInt(document.getElementById('num3').value);
+		if(x<y && x<z){
+			alert(x + " is smallest");
+			}
+		else if(y<x && y<z){
+			alert(y + " is smallest");
+			}
+			else{
+				alert(z +" is smallest");
+			}
+	}
+		function findMax(x,y,z){
+			var x= parseInt(document.getElementById('num1').value); 
+	var y= parseInt(document.getElementById('num2').value);
+	var z= parseInt(document.getElementById('num3').value);
+		
+		if(x>y && x>z){
+			alert(x + " is Biggest");
+			}
+		else if(y>x && y>z){
+			alert(y + " is Biggest");
+			}
+			else{
+				alert(z +" is Biggest");
+			}
+		}
+		function findAvg(x,y,z){
+			var x= parseInt(document.getElementById('num1').value); 
+	var y= parseInt(document.getElementById('num2').value);
+	var z= parseInt(document.getElementById('num3').value);
+
+		 var avg= x+y+z;
+		 avg= avg/3;
+		 alert(avg);
+		 
+		}
+</script>
+</head>
+<form>
+	<input type="number" name="num1" id="num1" placeholder="number 1"/><br/>
+	<input type="number" name="num2" id="num2" placeholder="number 2"/><br/>
+	<input type="number" name="num3" id="num3" placeholder="number 3"/><br/>
+    <input type="submit" name="btn1" value="Find Min" onClick="findMin()"/><br/>
+    <input type="submit" name="btn2" value="Find Max" onClick="findMax()"/><br/>
+    <input type="submit" name="btn3" value="Find Avg" onClick="findAvg()"/><br/>
+</form>
+<body>
+</body>
+</html>

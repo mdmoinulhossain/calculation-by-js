@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+var display="Information \n";
+function Show()
+{
+	
+	display += "Name: "+document.forms[0].elements[0].value+"<br />";
+	display += "color: "+document.forms[0].elements[1].value+"<br />";
+	if (document.forms[0].elements[2].checked)
+		display += "gender: "+document.forms[0].elements[2].value+"<br />";
+	else
+		display += "gender: "+document.forms[0].elements[3].value+"<br />";
+	for(var i=4; i<=6; i++)
+	{
+		if(document.forms[0].elements[i].checked)
+			display += "Chk: "+document.forms[0].elements[i].value+" "+"<br />";
+	}
+	//display+= "<br>Comments: "+document.forms[0].elements[7].value;
+	document.forms[0].elements[7].value=display
+}
+function mahmuda()
+{
+	Show();
+	var w = open("","","width=250, height=200");
+	var s = w.document;
+	
+	s.write("<body>")
+	s.write("<h2>Personal Information</h2>");
+	s.write(display+"<br/><br/>");
+	s.write("<button onclick='window.close();'>Close</button>");
+	s.write("</body>"); 
+}
+
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post">
+  <p>
+    <label for="textfield">Text Field:</label>
+    <input type="text" name="textfield" id="textfield">
+  </p>
+  <p>
+    <label for="select">Select:</label>
+    <select name="select" id="select">
+      <option>red</option>
+      <option>green</option>
+      <option>blue</option>
+    </select>
+  </p>
+  <p>
+    <input type="radio" name="radio"  value="Male">
+    <label for="radio">Male </label>
+    <input type="radio" name="radio"  value="Female">
+    <label for="radio2">Female</label>
+  </p>
+  <p>
+    <input type="checkbox" name="checkbox" id="checkbox" value="chk1">
+    <label for="checkbox">Checkbox </label>
+    <input type="checkbox" name="checkbox2" id="checkbox2" value="chk2">
+    <label for="checkbox2">Checkbox </label>
+    <input type="checkbox" name="checkbox3" id="checkbox3" value="chk3">
+    <label for="checkbox3">Checkbox </label>
+  </p>
+  <p>
+    <label for="textarea">Text Area:</label>
+    <textarea name="textarea" id="textarea"></textarea>
+  </p>
+  <p>
+    <input type="button" name="button" id="button" value="Submit" onClick="Show()">
+    <input type="button" name="btn" id="btn" value="open" onClick="mahmuda()">
+  </p>
+</form>
+</body>
+</html>

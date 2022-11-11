@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/WDPF-M/Downloads/openWindow.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>form value in another window</title>
+<script>
+var w;
+function openwindow(){
+	var username = document.loginform.uname.value;
+	var userpass = document.loginform.upass.value;
+	//if(username == "" || userpass == ""){alert("req"); return;}
+	w = window.open("","","width=600px, height=300px");
+	w.document.write("Username: "  + username + ",<br> Password: "  + userpass);
+	w.document.write("<hr><button onClick='javascript:window.close()'>Close me</button>");
+	}
+function winClose(){
+	w.close();
+	}	
+</script>
+</head>
+<body>
+<form name="loginform">
+username : <input type="text" name="uname"><br><br>
+password : <input type="password" name="upass"><br>
+<input type="button" value="open" onclick="openwindow()">
+</form>
+<hr>
+<button onclick="winClose()">Close Open Window</button>
+
+
+</body></html>

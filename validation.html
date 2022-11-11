@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="javascript">
+	var display,winShow;
+	
+	function ShowList()
+	{
+	    if(document.fav.fn.value == "") alert("You cannot keep first name blank");
+		var chk = document.fav.phone.value;
+		if(chk.length<11) alert("Mobile no is invalid");
+		
+		var chk2 = document.fav.email.value;
+		if(chk2.search("@") < 0) alert("Email is invalid");
+		
+		display = "Your personal Information\n";
+		
+		var name = document.fav.fn.value +" "+ document.fav.ln.value;
+		display += "Full Name: " + name +"\n";
+		
+		display += "Email: "+ document.fav.email.value + "\n";
+		display += "Mobile: "+ document.fav.phone.value + "\n";
+				
+		if(document.fav.elements[4].checked)
+			var gender = document.fav.elements[4].value;
+		else
+			var gender = document.fav.elements[5].value;
+		
+		display +="Your gender: "+gender+"\n";
+		
+		display += "Your location: "+ document.fav.location.value+"\n";
+		display += "Your interest: \n";
+		for (var i = 7; i<=10; i++)
+		{
+			if(document.fav.elements[i].checked) 
+				display +=document.fav.elements[i].value+"\n";
+		}
+		
+		document.fav.answer.value = display; 			
+
+	}	 
+		
+	function WinShow()
+	{
+		ShowList();
+	
+		winShow = open("","sh","scrollbars=0,width=250, height=200, resizable=no")
+		var s = winShow.document;
+		s.write("<body bgcolor='skyblue'>")
+		//s.write("<center><h2>Personal Information</h2></center>");
+		s.write(display+"<br/><br/>");
+		s.write('<input type="button" value="Close" onclick="window.close();" />');
+		//s.write("<a href='#' onclick=sh.unload();>Close</a>");
+		s.write("</body>"); 
+		//s.close();	
+	}
+	
+	function WinClose()
+	{
+		winShow.close();
+	
+	}
+	
+</script>
+</head>
+
+<body>
+<form name="fav">
+  <p><strong>First Name:</strong> 
+    <input type="text" name="fn" />
+    <br />
+    <br />
+    <strong>LastName:</strong> 
+    <input type="text" name="ln" />
+  </p>
+  <p><strong>Email:</strong>  
+    <input type="text" name="email" />
+  </p>
+  <p><strong>Mobile:</strong>
+    <input type="text" name="phone" />
+<br />
+    <br />
+    <strong>Select Gender:</strong>
+    <input type="radio" name="gender" value="Male" checked="checked"/>    
+    Male
+    <input type="radio" name="gender" value="Female" />  
+    Female  <br />
+    <br />
+
+    <strong>Location : </strong>
+    <select name="location">
+      <option value="Dhaka">Dhaka</option>
+      <option value="Comilla">Comilla</option>
+      <option value="Khulna">Khulna</option>
+    </select>
+    <br />
+    <br />
+
+    <strong>Select your Interest : </strong><br />
+  
+    <input type="checkbox" name="c1" value="Bangladeshi" /> 
+    Bangladeshi food<br />
+    <input type="checkbox" name="c2" value="Chinese" />
+    Chinese food<br />
+    <input type="checkbox" name="c3" value="Italian" />
+    Italian food <br />
+    <input type="checkbox" name="c4" value="Indian" />
+    Indian food<br />
+
+    <br />
+    <br />
+    <textarea  cols="70" rows="8" name="answer"></textarea>
+  
+    <br />
+    <br />
+ 
+      <input type="button" name="Submit" value="Submit Your Answer" onclick="ShowList()" />
+      <input type="button" name="Submit2" value="Open" onclick="WinShow()" />
+      <input type="button" name="Submit3" value="Close" onclick="WinClose()" />
+      </p>
+</form>
+</body>
+</html>

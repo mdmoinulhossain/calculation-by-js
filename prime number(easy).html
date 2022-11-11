@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script language="javascript">
+//var p=prompt("Enter Your Prime Number:","0")
+function abc() {
+
+   	var p=document.getElementById("a").value;
+x=1;
+if(p==0 || p==1) x=0;
+
+for(var i=2; i<p; i++)
+{
+	if (p%i==0)  {x=0; break;}
+}
+if(x==1)
+alert("This is Prime")
+else
+alert("This is not Prime")
+}
+</script>
+</head>
+
+<body>
+<input type="text" id="a"><br/>
+<input type="button" value="submit"  onClick="abc()">
+</body>
+</html>

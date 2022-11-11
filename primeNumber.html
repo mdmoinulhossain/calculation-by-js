@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		function show(){
+			var primeNumbers= [];
+			var inputValue= document.getElementById('num1').value;
+			if(inputValue==1 || inputValue==0){
+				document.write("Not A prime Number");
+			}
+			else{
+				for(var i= 2;i<inputValue;i++){
+					primeNumbers.push(inputValue%i);
+					
+
+				}
+				for(var j=0;j<primeNumbers.length;j++){
+					if(primeNumbers[j]==0){
+						document.write("Not A prime Number");
+						exit();
+					}
+
+				}
+				document.write(" A prime Number");
+				
+			}
+			
+
+			
+		}
+	</script>
+<body>
+	<form>
+		<input type="number" id="num1" name="num1"/>
+		<input type="submit" value="submit" onclick="show()" />
+	</form>
+</body>
+</html>

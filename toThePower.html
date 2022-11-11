@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script type="text/javascript">
+		function pow(){
+			
+			var power= document.getElementById('x').value;
+			var base= document.getElementById('y').value;
+			var x= 1;
+			for(var i=1;i<=power;i++){
+				x=base*x;
+			}
+			alert(x);
+		}
+	
+	</script>
+<form>
+	<input type="number" placeholder="power" name="power" id="x"/>
+	<input type="number" placeholder="base" name="base" id="y"/>
+	<input type="submit" value="submit" onclick="pow()"/>
+</form>
+
+
+
+</body>
+</html>
