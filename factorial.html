@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <body>
+	<!-- Factorial is a multiplication of previous numbers of a number.
+		When we want to find factorial of 5, thats means it's calculate 5 * 4 * 3 * 2 * 1 = 120.
+		So, Factorial of 5 is 120.
+	-->
 	<script type="text/javascript">
-		function facto(){
-		
+		function facto(){		
 		y=  document.getElementById("number").value;
 		var x= 1;
 		for(var i=y;i>0;i--){
 			x= x*i;
 		}
-		document.write(x);
+		alert(x);
 	}
 	</script>
 <form>
