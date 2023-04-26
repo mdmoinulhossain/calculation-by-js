@@ -5,17 +5,25 @@
 <title>form value in another window</title>
 <script>
 var w;
+function winClose(){
+	w.close();
+	window.reload();
+	}	
 function openwindow(){
 	var username = document.loginform.uname.value;
 	var userpass = document.loginform.upass.value;
-	//if(username == "" || userpass == ""){alert("req"); return;}
-	w = window.open("","","width=600px, height=300px");
-	w.document.write("Username: "  + username + ",<br> Password: "  + userpass);
-	w.document.write("<hr><button onClick='javascript:window.close()'>Close me</button>");
+
+	if(username == "" || userpass == ""){
+		alert("Field/s empty");
 	}
-function winClose(){
-	w.close();
-	}	
+
+	if(username && userpass){
+		w = window.open("","","width=600px, height=300px");
+		w.document.write("Username: "  + username + "<br/> Password: "  + userpass);
+	}
+	
+	}
+
 </script>
 </head>
 <body>
@@ -25,7 +33,7 @@ password : <input type="password" name="upass"><br>
 <input type="button" value="open" onclick="openwindow()">
 </form>
 <hr>
-<button onclick="winClose()">Close Open Window</button>
+
 
 
 </body></html>
